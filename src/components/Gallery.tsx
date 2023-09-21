@@ -18,20 +18,23 @@ export function Gallery(props) {
       setClothes([...response]);
     }
     fetchData();
-  }, []);
+  }, [closet_id]);
 
   const handleDelete = async (clothe_id) => {
     const requestBody = { clothes_ids: [clothe_id] };
     await ClothesService.deleteClothesApiV1ClothesDeleteDelete(requestBody);
 
-    console.log("delete");
     const newClothes = clothes.filter((clothe) => clothe.id !== clothe_id);
     setClothes(newClothes);
   };
 
   const handleAddClick = async (shop_url) => {
-    const requestBody = { name: "string", "shop_url": shop_url};
-    await ClothesService.createClothesApiV1ClothesCreateClosetIdPost(requestBody);
+    const params = closet_id;
+    const requestBody = { name: "string", shop_url: shop_url };
+    await ClothesService.createClothesApiV1ClothesCreateClosetIdPost(
+      params,
+      requestBody
+    );
   };
 
   return (
