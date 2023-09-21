@@ -9,7 +9,7 @@ export function Gallery(props) {
   const [clothes, setClothes] = useState([] as any);
   // closetsをfetchしてcloset_idを取得する
   useEffect(() => {
-    OpenAPI.BASE = import.meta.env.VITE_BACKEND_URL;
+    OpenAPI.BASE = "https://instaclothes-test.azurewebsites.net";
     async function fetchData() {
       const response =
         await ClothesService.readClothesApiV1ClothesGetMyClothesClosetIdGet(

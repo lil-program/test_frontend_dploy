@@ -3,12 +3,12 @@ import { initializeApp } from 'firebase/app';
 
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGE_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  apiKey: "AIzaSyD3DL0BH2sZj7B1WyusajDuGV2R4lgIq6c",
+  authDomain: "lilprogram.firebaseapp.com",
+  projectId: "lilprogram",
+  storageBucket: "lilprogram.appspot.com",
+  messagingSenderId: "368513144302",
+  appId: "1:368513144302:web:b03b03e1fcd98ebbcaaaff",
 };
 
 const app = initializeApp(firebaseConfig);

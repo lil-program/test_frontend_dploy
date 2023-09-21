@@ -32,7 +32,7 @@ function Home() {
   // closets
   const [closets, setClosets] = useState([] as any);
   useEffect(() => {
-    OpenAPI.BASE = import.meta.env.VITE_BACKEND_URL;
+    OpenAPI.BASE = "https://instaclothes-test.azurewebsites.net";
     async function fetchData() {
       const response =
         await ClosetsService.readClosetsApiV1ClosetsGetMyClosetsGet();
