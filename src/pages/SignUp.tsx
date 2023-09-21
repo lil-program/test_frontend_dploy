@@ -1,11 +1,12 @@
 import { useRef } from 'react';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-import { UsersService } from "../api_clients";
+import { OpenAPI, UsersService } from "../api_clients";
 import { auth } from "../FirebaseConfig";
 import { useAuthContext } from "../context/AuthContext";
 
 import { Navigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   // アカウント登録は、nameをfactoryに渡す
@@ -21,8 +22,10 @@ const SignUp = () => {
 
     const user = userCredential.user;
 
-    const requestBody = {"name": event.target.elements.name}
-    UsersService.createUserApiV1UsersCreatePost(requestBody)
+    const requestBody = {"name": event.target.elements.name.value}
+    console.log("check")
+    await UsersService.createUserApiV1UsersCreatePost(requestBody)
+    console.log("user created")
   };
   if (user){
     return <Navigate replace to="/home" />
@@ -50,6 +53,9 @@ const SignUp = () => {
         </div>
         <div>
           <button>登録</button>
+        </div>
+        <div>
+          loginは<Link to={"/login"}>こちら</Link>から
         </div>
       </form>
     </div>
